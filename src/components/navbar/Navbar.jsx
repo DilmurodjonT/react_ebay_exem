@@ -1,6 +1,6 @@
 import React from "react";
 import "./Navbar.css";
-import Container from "../../utils/Components";
+import { Container } from "../../utils/Components";
 import qongiroq from "../../images/qo'giroq.svg";
 import savat from "../../images/savat.svg";
 import logo from "../../images/logo.png";

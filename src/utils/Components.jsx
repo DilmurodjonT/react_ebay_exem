@@ -1,8 +1,8 @@
 import React from "react";
 import "./Components.css";
 
-const Components = ({ children }) => {
+const Container = ({ children }) => {
   return <div className="container">{children}</div>;
 };
 
-export default Components;
+export { Container };
