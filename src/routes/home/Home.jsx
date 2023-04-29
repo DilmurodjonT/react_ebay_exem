@@ -3,6 +3,7 @@ import { Container } from "../../utils/Components";
 import Search from "../../components/search/Search";
 import HomeBanner from "../../components/homeBanner/HomeBanner";
 import AllCategories from "../../components/allCategories/AllCategories";
+import Products from "../../components/products/Products";
 
 const Home = () => {
   return (
@@ -11,6 +12,7 @@ const Home = () => {
         <Search />
         <HomeBanner />
         <AllCategories />
+        <Products />
       </Container>
     </div>
   );
