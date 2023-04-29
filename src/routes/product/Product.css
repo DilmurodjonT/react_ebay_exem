@@ -1,0 +1,21 @@
+.single__product {
+  /* display: flex; */
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 25px;
+  justify-content: space-evenly;
+  /* background-color: red; */
+}
+
+.single__image {
+  width: 100%;
+  max-width: 600px;
+  height: 1/1;
+  border-radius: 15px;
+}
+
+.single__foto {
+  margin: 5px;
+  border-radius: 5px;
+}

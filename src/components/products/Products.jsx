@@ -15,11 +15,11 @@ const Products = () => {
   return (
     <>
       <div className="allCategoris__title__blog product__cards__title">
-        <h3 className="allCategoris__title">Sop by Category</h3>
+        <h3 className="allCategoris__title">Shop by Products</h3>
       </div>
       <div className="product__cards">
         {ProductsData.map((productItem) => (
-          <Link className="product__card">
+          <Link className="product__card" to={`/product/${productItem.id}`}>
             <div className="product_card__image-wrapper">
               <img src={productItem.images[0]} alt="" />
             </div>
