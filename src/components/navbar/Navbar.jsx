@@ -3,7 +3,6 @@ import "./Navbar.css";
 import { Container } from "../../utils/Components";
 import qongiroq from "../../images/qo'giroq.svg";
 import savat from "../../images/savat.svg";
-import logo from "../../images/logo.png";
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 
@@ -32,11 +31,6 @@ const Navbar = () => {
           </div>
         </div>
         <div className="navbar__stick"></div>
-        <div className="logo__search">
-          <div className="logo">
-            <img src={logo} alt="" />
-          </div>
-        </div>
       </Container>
     </div>
   );
