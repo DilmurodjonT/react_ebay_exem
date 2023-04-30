@@ -1,6 +1,6 @@
-.allCategories {
+/* .allCategories {
   height: 230px;
-}
+} */
 
 .allCategoris__title__blog {
   display: flex;
@@ -36,6 +36,7 @@
   gap: 25px 0;
   color: #000;
   text-decoration: none;
+  margin-bottom: 20px;
 }
 
 .category__item img {

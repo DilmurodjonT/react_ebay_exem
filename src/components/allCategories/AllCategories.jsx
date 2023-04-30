@@ -11,6 +11,7 @@ const AllCategories = () => {
       setCategoriesData(response.data).catch((err) => console.log(err))
     );
   }, []);
+  // console.log(CategoriesData);
   return (
     <section className="allCategories">
       <div className="allCategoris__title__blog">
@@ -20,7 +21,7 @@ const AllCategories = () => {
       </div>
       <div className="allCategories__container">
         {CategoriesData.map((category) => (
-          <Link className="category__item">
+          <Link className="category__item" to={`/categories/${category.id}`}>
             <div className="category__item__image">
               <img src={category.image} alt="" />
             </div>
