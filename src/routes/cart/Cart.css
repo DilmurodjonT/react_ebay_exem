@@ -1,0 +1,27 @@
+.cart__cards {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 0 20px;
+}
+
+.cart__card {
+  width: 170px;
+  box-shadow: 0 0 10px #cdcdcd;
+  padding: 10px;
+  display: flex;
+  /* flex-direction: column; */
+  /* justify-content: space-between; */
+  /* text-decoration: none; */
+  /* margin-bottom: 50px; */
+}
+
+.cart__delet {
+  padding: 5px 0;
+  border-radius: 10px;
+  border: none;
+  background-color: red;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+}

@@ -27,7 +27,9 @@ const Navbar = () => {
           </div>
           <div className="navbar__right">
             <img src={qongiroq} alt="" />
-            <img src={savat} alt="" />
+            <Link to="/cart">
+              <img src={savat} alt="" />
+            </Link>
           </div>
         </div>
         <div className="navbar__stick"></div>

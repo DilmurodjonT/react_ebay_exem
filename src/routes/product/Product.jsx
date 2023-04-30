@@ -4,8 +4,10 @@ import "./Product.css";
 import { useParams } from "react-router-dom";
 import { Container } from "../../utils/Components";
 import Search from "../../components/search/Search";
+import { useDispatch } from "react-redux";
 
 const Product = () => {
+  const dispatch = useDispatch();
   const { id } = useParams();
   const [data, setData] = useState(null);
   const [activeImageIndex, setactiveImageIndex] = useState(0);
@@ -16,7 +18,12 @@ const Product = () => {
       setData(components.data).catch((err) => console.log(err))
     );
   }, [id]);
-  console.log(data);
+  // console.log(data);
+
+  const cartProduct = (data) => {
+    dispatch({ product: data, type: "CART_PRODUCT" });
+  };
+
   return (
     <div>
       <Container>
@@ -53,6 +60,9 @@ const Product = () => {
               {data?.price ? <strong>US ${data.price}</strong> : <></>}
               {data?.description ? <p>{data.description}</p> : <></>}
             </div>
+            <button className="product__cart" onClick={() => cartProduct(data)}>
+              Add to cart
+            </button>
           </div>
         }
       </Container>
