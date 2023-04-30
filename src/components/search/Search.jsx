@@ -3,8 +3,10 @@ import "./Search.css";
 import { FiSearch } from "react-icons/fi";
 import logo from "../../images/logo.png";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const Search = () => {
+  const [searchData, setSearchData] = useState(null);
   const [searchText, setsearchText] = useState("");
   console.log(searchText);
 
@@ -12,7 +14,7 @@ const Search = () => {
     e.preventDefault();
     axios
       .get(`https://api.escuelajs.co/api/v1/products/?title=${searchText}`)
-      .then((response) => console.log(response.data))
+      .then((response) => setSearchData(response.data))
       .catch((err) => console.log(err));
   };
 
@@ -35,6 +37,44 @@ const Search = () => {
             <button className="search__btn">Search</button>
           </form>
         </div>
+        {searchData?.length > 0 ? (
+          <div className="search__results">
+            <div className="result__nav">
+              <h3>
+                Search results:{" "}
+                {/* <span className="input__txt">#{searchText}</span> */}
+              </h3>
+              <div className="result__nav__div">
+                <p>
+                  <span>{searchData.length} Results</span>
+                </p>
+                <span
+                  className="result__nav__delet"
+                  onClick={() => {
+                    setsearchText("");
+                    setSearchData([]);
+                  }}
+                  style={{ color: "dodgerblue" }}
+                >
+                  Delet
+                </span>
+              </div>
+            </div>
+            <div>
+              {searchData.map((product) => (
+                <div className="product__card__wrapper">
+                  <Link className="product__img" to={`/product/${product.id}`}>
+                    <img src={product.images[0]} alt="Product" />
+                    <span>{product.title}</span>
+                  </Link>
+                  <strong>{product.price} $</strong>
+                </div>
+              ))}
+            </div>
+          </div>
+        ) : (
+          <></>
+        )}
       </div>
       <div className="navbar__stick"></div>
     </>
