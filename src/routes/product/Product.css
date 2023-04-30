@@ -19,3 +19,23 @@
   margin: 5px;
   border-radius: 5px;
 }
+
+.single__info {
+  margin-top: 20px;
+  max-width: 600px;
+}
+
+.single__info h3 {
+  margin-bottom: 20px;
+  font-size: 26px;
+  color: #333;
+}
+
+.single__info strong {
+  font-size: 20px;
+}
+
+.single__info p {
+  margin-top: 20px;
+  color: #949292;
+}

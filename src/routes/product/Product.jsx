@@ -50,7 +50,7 @@ const Product = () => {
             </div>
             <div className="single__info">
               {data?.title ? <h3>{data.title}</h3> : <></>}
-              {data?.price ? <strong>{data.price}$</strong> : <></>}
+              {data?.price ? <strong>US ${data.price}</strong> : <></>}
               {data?.description ? <p>{data.description}</p> : <></>}
             </div>
           </div>
