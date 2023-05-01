@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 import { Container } from "../../utils/Components";
 import Search from "../../components/search/Search";
 import { useDispatch } from "react-redux";
+import Footer from "../../components/footer/Footer";
 
 const Product = () => {
   const dispatch = useDispatch();
@@ -68,6 +69,7 @@ const Product = () => {
             </button>
           </div>
         }
+        <Footer />
       </Container>
     </div>
   );

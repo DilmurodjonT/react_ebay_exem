@@ -59,7 +59,7 @@ const Search = () => {
                   }}
                   style={{ color: "dodgerblue" }}
                 >
-                  Delet
+                  Delete
                 </span>
               </div>
             </div>

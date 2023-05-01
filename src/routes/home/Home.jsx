@@ -5,6 +5,7 @@ import HomeBanner from "../../components/homeBanner/HomeBanner";
 import AllCategories from "../../components/allCategories/AllCategories";
 import Products from "../../components/products/Products";
 import HomeBannerTwo from "../../components/homeBannerTwo/HomeBannerTwo";
+import Footer from "../../components/footer/Footer";
 
 const Home = () => {
   return (
@@ -15,6 +16,7 @@ const Home = () => {
         <AllCategories />
         <Products />
         <HomeBannerTwo />
+        <Footer />
       </Container>
     </div>
   );

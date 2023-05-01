@@ -6,6 +6,7 @@ import { Container } from "../../utils/Components";
 import Search from "../../components/search/Search";
 import CategoriesBanner from "../../components/categoriesBanner/CategoriesBanner";
 import { Link } from "react-router-dom";
+import Footer from "../../components/footer/Footer";
 
 const Categories = () => {
   const { id } = useParams();
@@ -50,6 +51,7 @@ const Categories = () => {
             ))}
           </div>
         </div>
+        <Footer />
       </Container>
     </div>
   );

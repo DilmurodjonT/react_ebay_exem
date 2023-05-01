@@ -25,3 +25,13 @@
   font-weight: 700;
   cursor: pointer;
 }
+
+.cart__delet:hover {
+  background-color: #d1cfcf;
+  color: red;
+}
+
+.cart__delet:active {
+  background-color: red;
+  color: #fff;
+}

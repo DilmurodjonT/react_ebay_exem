@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import { Container } from "../../utils/Components";
 import Search from "../../components/search/Search";
 import { useDispatch } from "react-redux";
+import Footer from "../../components/footer/Footer";
 
 const Cart = () => {
   const dispatch = useDispatch();
@@ -39,6 +40,7 @@ const Cart = () => {
           ))}
         </div>
         <h3>Total: US {total}$</h3>
+        <Footer />
       </Container>
     </>
   );

@@ -1,0 +1,8 @@
+.homeBannerTwo {
+  max-width: 1200px;
+  display: flex;
+}
+
+.bannerTwo {
+  margin: 50px auto;
+}
