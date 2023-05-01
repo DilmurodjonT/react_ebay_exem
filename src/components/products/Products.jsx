@@ -7,10 +7,11 @@ import { Link } from "react-router-dom";
 const Products = () => {
   const [ProductsData, setproductsData] = useState([]);
   useEffect(() => {
-    axios("https://api.escuelajs.co/api/v1/products?offset=0&limit=6").then(
-      (components) =>
-        setproductsData(components.data).catch((err) => console.log(err))
-    );
+    axios("https://api.escuelajs.co/api/v1/products?offset=0&limit=6")
+      .then((components) => setproductsData(components.data))
+      .catch((error) => {
+        console.log(error.response.data.error);
+      });
   }, []);
   return (
     <>
@@ -19,7 +20,11 @@ const Products = () => {
       </div>
       <div className="product__cards">
         {ProductsData.map((productItem) => (
-          <Link className="product__card" to={`/product/${productItem.id}`}>
+          <Link
+            className="product__card"
+            key={productItem.id}
+            to={`/product/${productItem.id}`}
+          >
             <div className="product_card__image-wrapper">
               <img src={productItem.images[0]} alt="" />
             </div>

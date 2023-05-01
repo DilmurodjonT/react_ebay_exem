@@ -14,9 +14,11 @@ const Product = () => {
   useEffect(() => {
     axios(`https://api.escuelajs.co/api/v1/products/${id}`, {
       timeout: 10000,
-    }).then((components) =>
-      setData(components.data).catch((err) => console.log(err))
-    );
+    })
+      .then((components) => setData(components.data))
+      .catch((error) => {
+        console.log(error.response.data.error);
+      });
   }, [id]);
   // console.log(data);
 
@@ -43,6 +45,7 @@ const Product = () => {
               {data?.images.map((image, index) => (
                 <img
                   className="single__foto"
+                  key={image}
                   style={
                     index === activeImageIndex
                       ? { border: "5px solid red" }

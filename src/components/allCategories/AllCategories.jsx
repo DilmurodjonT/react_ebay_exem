@@ -7,9 +7,11 @@ import { Link } from "react-router-dom";
 const AllCategories = () => {
   const [CategoriesData, setCategoriesData] = useState([]);
   useEffect(() => {
-    axios("https://api.escuelajs.co/api/v1/categories").then((response) =>
-      setCategoriesData(response.data).catch((err) => console.log(err))
-    );
+    axios("https://api.escuelajs.co/api/v1/categories")
+      .then((response) => setCategoriesData(response.data))
+      .catch((error) => {
+        console.log(error.response.data.error);
+      });
   }, []);
   // console.log(CategoriesData);
   return (
@@ -21,7 +23,11 @@ const AllCategories = () => {
       </div>
       <div className="allCategories__container">
         {CategoriesData.map((category) => (
-          <Link className="category__item" to={`/categories/${category.id}`}>
+          <Link
+            className="category__item"
+            key={category.id}
+            to={`/categories/${category.id}`}
+          >
             <div className="category__item__image">
               <img src={category.image} alt="" />
             </div>

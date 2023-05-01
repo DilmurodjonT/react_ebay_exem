@@ -14,7 +14,10 @@ const Search = () => {
     e.preventDefault();
     axios
       .get(`https://api.escuelajs.co/api/v1/products/?title=${searchText}`)
-      .then((response) => setSearchData(response.data))
+      .then((response) => {
+        setSearchData(response.data);
+        !response.data.length && alert("NO like this products!");
+      })
       .catch((err) => console.log(err));
   };
 
@@ -62,7 +65,7 @@ const Search = () => {
             </div>
             <div>
               {searchData.map((product) => (
-                <div className="product__card__wrapper">
+                <div className="product__card__wrapper" key={product.id}>
                   <Link className="product__img" to={`/product/${product.id}`}>
                     <img src={product.images[0]} alt="Product" />
                     <span>{product.title}</span>
