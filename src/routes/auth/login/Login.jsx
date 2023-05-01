@@ -14,7 +14,10 @@ const Login = () => {
         email: userEmail,
         password: userPassword,
       })
-      .then((response) => console.log(response.data))
+      .then((response) => {
+        console.log(response.data);
+        window.location = "/";
+      })
       .catch((err) => console.log(err));
   }
 
