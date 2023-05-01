@@ -6,7 +6,11 @@ import Search from "../../components/search/Search";
 
 const Cart = () => {
   const storeData = useSelector((state) => state);
-  console.log(storeData);
+
+  const productPrices = storeData.cartProducts.map((i) => +i.price);
+  const total = productPrices.reduce((a, b) => a + b, 0);
+
+  console.log(total);
   return (
     <>
       <Container>
@@ -23,6 +27,7 @@ const Cart = () => {
             </div>
           ))}
         </div>
+        <h3>Total: US {total}$</h3>
       </Container>
     </>
   );
